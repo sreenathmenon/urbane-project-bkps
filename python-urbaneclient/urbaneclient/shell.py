@@ -333,8 +333,6 @@ def _exec_(args=None):
     # list signups
     elif getattr(args, 'list', False):
         (result, total) = signups.list(format='common')
-        print result
-        print '++++++++++++++++++++++++++++++'
         if not result:
             write('No data...')
             return

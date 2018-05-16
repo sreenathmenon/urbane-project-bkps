@@ -338,8 +338,8 @@ class Client(object):
 
 
     # update existing signup
-    def update(self, id=None, **kwargs):
-
+    def update(self, kwargs):
+        id = kwargs['id']
         if not id:
             raise UrbaneClientError('parameter `id` is mandatory')
 
@@ -357,7 +357,7 @@ class Client(object):
                 'X-Auth-Token': self._auth_token_
             }
         )
-        # print res.text
+        print res.text
         if res.status_code == 200:
             data = json.loads(res.text)
             return Signup(**data)
@@ -424,7 +424,7 @@ class Client(object):
             }
         )
         #print res
-        print res.status_code
+        #print res.status_code
         #print res.text
         if res.status_code == 200:
             data = json.loads(res.text)
