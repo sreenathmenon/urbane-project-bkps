@@ -1,0 +1,15 @@
+CHANGES
+=======
+
+* Changes corresponding to Keystone V3
+* Changes corresponding to Keystone V3
+* fix urbane cli regions handling issue
+* fix merge conflict
+* `region` lookup
+* add `region` handling
+* add install methods to client
+* 'list' method returns 'total' param (used for pagination
+* add .gitignore
+* clean up
+* 0.1.0_pre-apha
+* Initial commit

@@ -1,0 +1,16 @@
+<%
+  _dashboard_url_ = dashboard_url if dashboard_url else "https://dashboard.%s" % domain_name
+  _docs_url_ = docs_url if docs_url else "http://docs.openstack.org/liberty"
+%>
+Thank you for choosing ${organization} as your cloud computing services provider.
+
+To login to the ${organization} Customer Portal, go to ${_dashboard_url_}
+
+Your login credentials are the username and password you selected during signup.
+We're here to assist you in any way we can and your satisfaction with our services is our first priority.
+
+Best Regards,
+The ${organization} Team
+
+Portal Login: ${_dashboard_url_}
+Technical Documentation: ${_docs_url_}

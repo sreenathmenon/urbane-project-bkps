@@ -1,0 +1,349 @@
+/**
+ *  default style
+**/
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700);
+
+* {
+  box-sizing: border-box;
+  outline: 0 none;
+}
+
+html, body {
+  color: #333333;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 16pt;
+  font-weight: normal;
+  padding: 0;
+}
+
+body {
+  background: #e8e8e8;
+  padding-top: 40px;
+}
+
+header {
+  background: #f8f8f8; /*rgb(74,20,140);*/
+  border-bottom: 2px solid rgba(255, 255, 255, 0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  color: #444;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
+}
+
+/* style input placeholders */
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #bbb;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #bbb;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #bbb;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #bbb;
+}
+
+/* helper classes */
+.w-25 {
+  width: 25% !important;
+}
+.w-34 {
+  width: 34% !important;
+}
+.w-50 {
+  width: 50% !important;
+}
+.w-66 {
+  width: 66% !important;
+}
+.w-75 {
+  width: 75% !important;
+}
+
+#branding:link,
+#branding:visited {
+  border-bottom: 2px solid transparent;
+  color: inherit;
+  padding: 0 5px;
+  text-decoration: none;
+  transition: all .25s ease;
+}
+
+#contacts > * {
+  border-bottom: 2px solid transparent;
+  color: inherit;
+  display: inline-block;
+  font-size: 14pt;
+  line-height: 38px;
+  margin: 0;
+  padding: 0 5px;
+  text-decoration: none;
+  transition: all .25s ease;
+}
+
+#branding:focus,
+#branding:hover,
+#contacts a:focus,
+#contacts a:hover {
+  color: purple;
+  border-bottom-color: purple;
+}
+
+#content {
+  padding: 5px;
+}
+
+#signup-form {
+  font-size: 14pt;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+#signup-form fieldset,
+.success #message {
+  background: #fafafa;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  padding: 0 1em .5em;
+  margin: 1em 0;
+}
+
+#signup-form .form-title {
+  /*border-bottom: 1px solid rgba(0, 0, 0, 0.15);*/
+  font-size: 15pt;
+  font-weight: bold;
+  padding: 0.5em;
+}
+
+#signup-form fieldset > hr,
+.success #message > hr {
+  background: rgba(0, 0, 0, 0.1);
+  /*background-image: -webkit-linear-gradient(left, purple, #fafafa);*/
+  border: 0 none;
+  height: 1px;
+  margin: 0 0 0.5em 0;
+  padding: 0;
+}
+
+#signup-form .form-field {
+  border: 1px solid transparent;
+  padding: 0 0.5em;
+}
+
+#signup-form .form-field label {
+  color: #444;
+  line-height: 25px;
+  height: 30px;
+  margin: 0.75em 0;
+}
+#signup-form .form-field label.checkbox {
+  cursor: pointer;
+  display: block;
+  position: relative;
+  text-align: left;
+  width: 100%;
+}
+#signup-form .form-field label.checkbox input[type=checkbox] {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  top: 2px;
+  left: 2px;
+  margin: 0;
+}
+#signup-form .form-field label.checkbox > i {
+  background: #fafafa;
+  border: 1px dotted #bbb;
+  display: inline-block;
+  height: 25px;
+  margin: 1px 0 4px;
+  position: relative;
+  vertical-align: middle;
+  width: 25px;
+  transition: all .25s ease;
+}
+#signup-form .form-field label.checkbox input + i:after {
+  background: transparent;
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 0px;
+  height: 0px;
+  transition: all .1s ease;
+}
+#signup-form .form-field label.checkbox input:active + i,
+#signup-form .form-field label.checkbox input:focus + i {
+  border: 1px solid purple;
+}
+#signup-form .form-field label.checkbox input:checked + i {
+}
+#signup-form .form-field label.checkbox input:checked + i:after {
+  /*Make it a small rectangle so the border will create an L-shape*/
+  width: 5px;
+  height: 15px;
+  /*Add a white border on the bottom and left, creating that 'L' */
+  border: solid purple;
+  border-width: 0 3px 3px 0;
+  /*Rotate the L 45 degrees to turn it into a checkmark*/
+  transform: rotate(45deg);
+  top: 0px;
+  left: 7px;
+}
+
+#signup-form .form-field label.note {
+  font-size: 13pt;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* remove yellow background on autofilled inputs */
+/* fuck you webkit !!! */
+#signup-form .form-field input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #fafafa inset;
+}
+
+#signup-form .form-field input,
+#signup-form .form-field select {
+  background: transparent;
+  border: 0 none;
+  border-bottom: 1px dotted rgba(0, 0, 0, 0.15);
+  height: 30px;
+  margin: 0.75em 0;
+  transition: all .25s ease;
+}
+#signup-form .form-field select option {
+}
+#signup-form .form-field input {
+  padding-left: 0.25em;
+}
+#signup-form .form-field input:focus,
+#signup-form .form-field select:focus {
+  border-bottom: 1px solid purple;
+}
+
+#signup-form .form-field select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  text-indent: 0px;
+  text-overflow: '';
+  padding-left: 0.25em;
+}
+@-moz-document url-prefix() {
+  #signup-form .form-field select {
+    padding-left: 0;
+  }
+  #signup-form .form-field select option {
+    padding: 0;
+  }
+}
+#signup-form .form-field select::-ms-expand {
+  display: none;
+}
+
+#signup-form .form-field select.empty {
+  color: #ddd;
+}
+
+#signup-form .form-field select option {
+  color: #444;
+}
+#signup-form .form-field select option:disabled {
+  display: none;
+}
+
+#signup-form .agreement {
+  color: navy;
+  text-decoration: none;
+}
+
+#signup-form .form-field.invalid input,
+#signup-form .form-field.invalid select {
+  border-bottom-color: red;
+}
+
+#signup-form .form-field .error-message {
+  background: red;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 1px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  color: white;
+  display: block;
+  margin: 0 0 0.5em;
+  height: 0;
+  opacity: 0;
+  padding: 0 0 0 .25em;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
+  transition: all .2s ease;
+}
+#signup-form .form-field.invalid .error-message {
+  height: 1.7em;
+  opacity: 1;
+}
+
+
+#signup-form fieldset.submit {
+  padding: 0.5em;
+  text-align: center;
+}
+#signup-form-submit {
+  background: rgb(67,160,71); /*rgba(0,0,0,0.33);*/
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 1px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  line-height: 20px;
+  padding: 9px 7px 12px;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+  transition: all .25s ease;
+  width: 250px;
+}
+#signup-form-submit:hover {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+#signup-form-submit.disabled,
+#signup-form-submit.disabled:hover {
+  background: #bbb;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  color: rgba(0, 0, 0, 0.25);
+  cursor: not-allowed;
+  text-shadow: none;
+}
+
+#billing-address {
+  height: auto;
+  margin: 0;
+  padding: 0;
+  opacity: 1;
+  transition: all .25s ease;
+}
+
+#billing-address.hidden {
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.success #message {
+  clear: both;
+}
+
+.success #message h2 {
+  margin: 0.5em 0;
+}
+
+.success #message a {
+  color: purple;
+  text-decoration: none;
+}
+.success #message a:active,
+.success #message a:hover {
+  text-decoration: underline;
+}

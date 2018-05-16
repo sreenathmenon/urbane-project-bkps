@@ -1,0 +1,82 @@
+## -*- coding: utf-8 -*-
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>${brand_name} Signup</title>
+
+    <meta name="description" content="${brand_name} Signup WebApp">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="brand/img/logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="brand/img/logo.png">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="brand/css/style.css">
+
+  </head>
+
+  <body class="success">
+
+    <!--[if lt IE 10]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+
+    <noscript>
+      This application requires JavaScript to be enabled.
+    </noscript>
+
+    <header>
+      <div class="wrapper">
+
+      % if brand_home:
+        <a id="branding" href="${brand_home}" target="_blank">
+      % else:
+        <a id="branding" href="http://www.${brand_domain}" target="_blank">
+      % endif
+          <img id="brand-logo" src="brand/img/${brand_logo}">
+          <span id="brand-html">${brand_html or brand_name}</span>
+        </a>
+
+        <span id="contacts">
+        % if contact_link:
+          <a href="${contact_link}" target="_blank">Contact Us</a>
+        % endif
+        % if contact_phone:
+          % if isinstance(contact_phone, (list, tuple)):
+            % for phone in contact_phone:
+            <span class="contact_phone">${phone}</span>
+            % endfor
+          % else:
+            <span class="contact_phone">${contact_phone}</span>
+          % endif
+        % endif
+        </span>
+
+      </div>
+    </header>
+
+    <div id="content" class="wrapper">
+      <div id="message">
+        <h2>Success</h2>
+        <p>
+          You will receive an email from us shortly with details on how to log in to the ${brand_name} Customer Portal.
+          Your login credentials are the username and password you selected during signup.
+        </p>
+  			<hr>
+        <p>
+          If you want to learn more about the ${brand_name} APIs then go to <a href="http://docs.openstack.org/liberty" target="blank" />Technical Documentation</a>.
+      </p>
+      </div>
+    </div>
+
+  </body>
+
+</html>

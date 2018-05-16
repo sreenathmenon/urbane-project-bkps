@@ -1,0 +1,10 @@
+authorizenet
+ipaddr
+pecan
+peewee
+pycountry
+pycrypto
+pyminfraud
+pytz
+requests
+watchdog

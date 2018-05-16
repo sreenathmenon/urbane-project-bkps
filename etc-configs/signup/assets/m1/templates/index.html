@@ -1,0 +1,305 @@
+## -*- coding: utf-8 -*-
+<% from datetime import date %> 
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>${brand_name} Signup</title>
+
+    <meta name="description" content="${brand_name} Signup WebApp">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="brand/img/logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="brand/img/logo.png">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="brand/css/style.css">
+
+    <script src="lib/zepto.js"></script>
+
+  </head>
+
+  <body>
+
+    <!--[if lt IE 10]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+
+    <noscript>
+      This application requires JavaScript to be enabled.
+    </noscript>
+
+    <header>
+      <div class="wrapper">
+
+      % if brand_home:
+        <a id="branding" href="${brand_home}" target="_blank">
+      % else:
+        <a id="branding" href="http://www.${brand_domain}" target="_blank">
+      % endif
+          <img id="brand-logo" src="brand/img/${brand_logo}">
+          <span id="brand-html">${brand_html or brand_name}</span>
+        </a>
+
+        <span id="contacts">
+        % if contact_link:
+          <a href="${contact_link}" target="_blank">Contact Us</a>
+        % endif
+        % if contact_phone:
+          % if isinstance(contact_phone, (list, tuple)):
+            % for phone in contact_phone:
+            <span class="contact_phone">${phone}</span>
+            % endfor
+          % else:
+            <span class="contact_phone">${contact_phone}</span>
+          % endif
+        % endif
+        </span>
+
+      </div>
+    </header>
+
+    <div id="content" class="wrapper">
+
+      <form id="signup-form">
+
+        <fieldset id="signup-form-step-0">
+
+          <div class="form-title">New Signup</div>
+          <hr>
+
+          <!-- Generic fields -->
+
+          <div class="form-field">
+            <label for="username">Account ID:</label>
+            <div class="form-input">
+              <input id="username" name="username" placeholder="Account ID / Username">
+            </div>
+            <div class="error-message"></div>
+          </div>
+
+          <div class="form-field">
+            <label for="password">Account Password:</label>
+            <div class="form-input">
+              <input id="password" name="password" type="password" class="w-50" placeholder="Account Password">
+              <input id="confirm-password" name="confirm_password" class="w-50" type="password" placeholder="Confirm Password">
+            </div>
+            <div class="error-message"></div>
+          </div>
+
+          <!-- M1  specific fields -->
+
+          <div class="form-field">
+            <label for="m1-crm-account-num">CRM Account #:</label>
+            <div class="form-input">
+              <input id="m1-crm-account-num" name="m1_crm_account_num" placeholder="e.g. 601597948">
+            </div>
+            <div class="error-message"></div>
+          </div>
+
+          <div class="form-field">
+            <label for="m1-service-id">Service ID:</label>
+            <div class="form-input">
+              <input id="m1-service-id" name="m1_service_id" placeholder="e.g. clo000000123">
+            </div>
+            <div class="error-message"></div>
+          </div>
+
+          <div class="form-field">
+            <label for="m1-customer-name">Customer Name:</label>
+            <div class="form-input">
+              <input id="m1-customer-name" name="m1_customer_name" placeholder="Customer / Organization / Company Name">
+            </div>
+            <div class="error-message"></div>
+          </div>
+
+          <div class="form-field">
+            <label for="m1-business-reg-num">Business Registration #:</label>
+            <div class="form-input">
+              <input id="m1-business-reg-num" name="m1_business_reg_num" placeholder="e.g. 601597948">
+            </div>
+            <div class="error-message"></div>
+          </div>
+
+          <div class="form-field">
+            <label for="m1-registered-address">Registred Address:</label>
+            <div class="form-input">
+              <input id="m1-registered-address" name="m1_registered_address" placeholder="Apt., Building, Street, Locality, Region, ZIP, Country">
+            </div>
+            <div class="error-message"></div>
+          </div>
+
+          <div class="form-field">
+            <label for="m1-authorized-officer-name">Authorized Officer:</label>
+            <div class="form-input">
+              <input id="m1-authorized-officer-name" name="m1_authorized_officer_name" placeholder="Name of Authorized Officer">
+            </div>
+            <div class="error-message"></div>
+          </div>
+
+          <div class="form-field">
+            <label for="m1-authorized-officer-nric">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;NRIC:</label>
+            <div class="form-input">
+              <input id="m1-authorized-officer-nric" name="m1_authorized_officer_nric" placeholder="e.g. S1166958A">
+            </div>
+            <div class="error-message"></div>
+          </div>
+
+          <div class="form-field">
+            <label for="m1-authorized-officer-phone">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Phone:</label>
+            <div class="form-input">
+              <input id="m1-authorized-officer-phone" name="m1_authorized_officer_phone" placeholder="e.g. (+1) 555 123-456-7890">
+            </div>
+            <div class="error-message"></div>
+          </div>
+
+          <div class="form-field">
+            <label for="m1-authorized-officer-email">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Email:</label>
+            <div class="form-input">
+              <input id="m1-authorized-officer-email" name="m1_authorized_officer_email" placeholder="e.g. mailbox@example.com">
+            </div>
+            <div class="error-message"></div>
+          </div>
+
+          <div class="form-field">
+            <label for="m1-account-manager">Account Manager:</label>
+            <div class="form-input">
+              <input id="m1-account-manager" name="m1_account_manager" placeholder="Name of Account Manager">
+            </div>
+            <div class="error-message"></div>
+          </div>
+
+          % if enable_contact_extra:
+          <div class="form-field">
+            <label for="contact-extra">${contact_extra_label}:</label>
+            <div class="form-input">
+              <input id="contact-extra" name="contact_extra" placeholder="${contact_extra_prompt}">
+            </div>
+          </div>
+          % endif
+
+        </fieldset>
+
+        % if enable_billing:
+        <fieldset id="signup-form-step-1">
+
+          <div class="form-title">Billing</div>
+          <hr>
+
+          <div class="form-field">
+            <label for="billing-cc-number">Credit card:</label>
+            <div class="form-input">
+              <input id="billing-cc-number" name="billing_cc_number" class="w-66 empty" placeholder="Number">
+              <input id="billing-cc-secret" name="billing_cc_secret" class="w-34" placeholder="CVV">
+            </div>
+            <div class="error-message"></div>
+          </div>
+
+          <div class="form-field">
+            <label for="billing-cc-holder">Holder:</label>
+            <div class="form-input">
+              <input id="billing-cc-holder" name="billing_cc_holder" placeholder="Name as on Credit Card">
+            </div>
+            <div class="error-message"></div>
+          </div>
+
+          <div class="form-field">
+            <label for="billing-cc-expire">Expiration Date:</label>
+            <div class="form-input">
+              <select id="billing-cc-expire-month" name="billing_cc_expire_month" class="w-66 empty" onchange="$(this).removeClass('empty')">
+                <option value="" selected disabled>Month</option>
+                <option value="01">January</option>
+                <option value="02">February</option>
+                <option value="03">March</option>
+                <option value="04">April</option>
+                <option value="05">May</option>
+                <option value="06">June</option>
+                <option value="07">July</option>
+                <option value="08">August</option>
+                <option value="09">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+              </select>
+              <select id="billing-cc-expire-year" name="billing_cc_expire_year" class="w-34 empty" onchange="$(this).removeClass('empty')">
+                <option value="" selected disabled>Year</option>
+                % for year in range(date.today().year, date.today().year + 15):
+                <option value="${year}">${year}</option>
+                % endfor
+              </select>
+              <input type="hidden" name="billing_cc_expire">
+            </div>
+            <div class="error-message"></div>
+          </div>
+
+        </fieldset>
+        % endif
+
+        % if agreements:
+        <fieldset>
+
+          <div class="form-title">Agreement</div>
+          <hr>
+
+          <div class="form-field">
+            <label class="note">Please read carefully following agreements and confirm your acceptance:</label>
+            <ul>
+              % for id in agreements:
+              <li><a id="agreement-${id}" class="agreement" href="${agreements[id]['url']}" target="_blank">${agreements[id]['title']}</a></li>
+              % endfor
+            </ul>
+            <label class="checkbox">
+              <input id="accept-agreement" name="accept_agreements" type="checkbox" onchange="$('#signup-form-submit').toggleClass('disabled', !this.checked)">
+              <i class="checkbox"></i>
+              I have read and agree to the Agreements specified above.
+            </label>
+            <div class="error-message"></div>
+          </div>
+          <!--
+          <div class="form-field">
+            <label class="note">Email Preferences</label>
+            <label class="checkbox">
+              <input id="accept-updates" name="accept_updates" type="checkbox">
+              <i class="checkbox"></i>
+              I want to receive email updates with product and service announcements.
+            </label>
+          </div>
+          -->
+        </fieldset>
+        % endif
+
+        % if agreements:
+        <fieldset class="submit">
+          <button id="signup-form-submit" class="disabled" type="button" onclick="app.submit()">Signup</button>
+        </fieldset>
+        % else:
+        <fieldset class="submit">
+          <button id="signup-form-submit" type="button" onclick="app.submit()">Signup</button>
+        </fieldset>
+        % endif
+
+      </form>
+
+    </div>
+
+    <div id="wrapper">
+      <div id="spinner"></div>
+
+      <div id="api-error-message">
+        <h2>API Connectivity Error</h2>
+        <p><br>We apologize for any inconvenience. Please call us for assistance.<br><br><ul><li>Toll Free: 800-446-0744</li></ul><ul><li>International: +1 858-547-4526</li></ul></p>
+      </div>
+    </div>
+
+    <script src="app/main.js"></script>
+
+  </body>
+
+</html>

@@ -1,0 +1,13 @@
+#!/usr/bin/env python
+#
+# Urbane signup command line tool
+# Copyright: (c) 2016, NephoScale
+# Author: Igor V. Dyukov aka div
+#
+
+import sys
+
+from urbaneclient.shell import main
+
+if __name__ == '__main__':
+    sys.exit(main())

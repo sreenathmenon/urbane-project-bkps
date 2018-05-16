@@ -1,0 +1,166 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  padding-top: 40px;
+}
+
+header {
+  display: block;
+  height: 40px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.wrapper {
+  margin: 0 auto;
+  overflow: auto;
+  width: 100%;
+}
+
+#branding {
+  display: inline-block;
+  float: left;
+  height: 40px;
+}
+
+#brand-logo {
+  height: 100%;
+  vertical-align: middle;
+}
+#brand-html {
+  display: inline-block;
+}
+
+#contacts {
+  display: inline-block;
+  float: right;
+  height: 40px;
+}
+
+#content {
+  clear: both;
+  min-height: 100%;
+}
+
+#signup-form {
+  margin: 1em 0;
+  width: 100%;
+}
+
+#signup-form fieldset {
+  margin: 0;
+}
+
+#signup-form .form-field {
+  display: block;
+  height: auto;
+  white-space: nowrap;
+}
+
+#signup-form .form-field label {
+  display: block;
+  text-align: left;
+  vertical-align: top;
+}
+
+#signup-form .form-field .form-input   {
+  display: inline-block;
+  height: auto;
+  width: 100%;
+  white-space: nowrap;
+}
+
+#signup-form .form-field input,
+#signup-form .form-field select {
+  width: 100%;
+}
+
+#signup-forms .form-field.invalid input {
+  border-bottom-color: red;
+}
+
+#wrapper {
+  background: rgba(255, 255, 255, 0.25);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+}
+
+.active-request #wrapper,
+.api-error #wrapper {
+  display: block;
+}
+
+#spinner {
+  background: #ffffff url('/img/loading.gif') center center no-repeat;
+  opacity: 0.5;
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+#api-error-message {
+  background: #ffcccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  display: none;
+  width: 555px;
+  margin: 100px auto 0;
+  padding: 0.5em 1.5em;
+}
+
+.active-request #wrapper,
+.active-request #spinner,
+.api-error #wrapper,
+.api-error #api-error-message {
+  display: block;
+}
+
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    width: 750px;
+  }
+  #signup-form .form-field label {
+    display: inline-block;
+    width: 33%;
+  }
+  #signup-form .form-field .form-input   {
+    display: inline-block;
+    width: 66%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  header .wrapper {
+    width: 750px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  header .wrapper {
+    width: 1000px;
+  }
+}
+/*
+@media screen and (min-width: 1280px) {
+  header .wrapper {
+    width: 80em;
+  }
+}
+*/
