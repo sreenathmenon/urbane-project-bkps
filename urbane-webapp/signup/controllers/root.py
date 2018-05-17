@@ -33,6 +33,8 @@ def _gen_context_():
         context['contact_extra_label'] = conf.get('contact_extra_label', 'Extra')
         context['contact_extra_prompt'] = conf.get('contact_extra_prompt', 'Extra data...')
     context['enable_billing'] = conf.get('enable_billing', True)
+
+    context['fieldset_2_header'] = conf.get('fieldset_2_header', 'Verification')
     context['codes'] = codes()
     context['countries'] = countries()
     context['timezones'] = tzlist()
